@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block head %}
+<title>Home</title>
+
+{% endblock %} {% block body %}
+<section>
+  <div>
+    <form action="/site" method="POST">
+      Site:<input type="text" name="title" id="title" /><br />
+      <br />
+      <input type="submit" value="Search" />
+    </form>
+  </div>
+  <br />
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{{site}}">{{ title }}</a>
+        <small class="text-muted">{{ date }}</small>
+      </div>
+      <h2><a class="article-title" href="{{ site }}">{{ site }}</a></h2>
+      <p class="article-content">{{ comment }}</p>
+    </div>
+  </article>
+</section>
+{% endblock %}
